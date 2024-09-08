@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Spotlight } from "./ui/Spotlight";
 import { FaMailBulk } from "react-icons/fa";
-import MagicButton from "./ui/MagicButton"; // Assurez-vous que MagicButton est importé correctement
+import MagicButton from "./ui/MagicButton";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +13,11 @@ const Contact = () => {
     consent: false,
   });
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
@@ -21,7 +25,7 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
   };
