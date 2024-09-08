@@ -17,7 +17,6 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Insitu Systems",
   description: "Première solution Plug & Play pour la gestion de l’eau",
-  robots: "noindex",
 };
 
 export default function RootLayout({
